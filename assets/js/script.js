@@ -1,4 +1,4 @@
-/*fetch("https://test.api.amadeus.com/v1/security/oauth2/token",
+fetch("https://test.api.amadeus.com/v1/security/oauth2/token",
 {
     method: "POST",
     headers: {"Content-Type": "application/x-www-form-urlencoded"},
