@@ -9,6 +9,11 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/2.0.5/pure-min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/2.0.5/grids-responsive.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.25.1/moment.min.js"></script>
+
+
+
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
@@ -22,20 +27,20 @@
     <div id="layout" class="pure-g">
         <div class="search-sidebar pure-u-1 pure-u-md-1-3" id="search-form">
             <div class="header">
-                <form class="pure-form pure-form-stacked">
+                <div class="pure-form pure-form-stacked">
                     <fieldset>
-                        <h1>Flight Search</h1>
-                        <label for="stacked-origin">Origin</label>
-                        <input id="stacked-origin" placeholder="origin" />
-                        <label for="stacked-destination">Destination</label>
-                        <input id="stacked-destination" placeholder="destination" />
-                        <label for="stacked-state">Departure Date</label>
-                        <input id="stacked-departure" placeholder="departure-date" />
-                        <label for="stacked-state">Return Date</label>
-                        <input id="stacked-return" placeholder="return-date" />
-                        <button type="submit" class="pure-button pure-button-primary">Search</button>
+                        <legend>Flight Search</legend>
+                        <label for="origin">Origin</label>
+                        <select name="origin" id="origin" placeholder="origin"></select>
+                        <label for="destination">Destination</label>
+                        <select name="destination" id="destination" placeholder="destination"></select>
+                        <label for="departure-date">Departure Date</label>
+                        <input type="date" id="departure-date" placeholder="departure-date" />
+                        <label for="return-date">Return Date</label>
+                        <input type="date" id="return-date" placeholder="return-date" />
+                        <button class="pure-button pure-button-primary" id = "search">Search</button>
                     </fieldset>
-                </form>
+                </div>
             </div>
         </div>
 
@@ -70,8 +75,12 @@
                     <p class="TotalDeaths">Total Deaths:</p>
                     <p class="OpenCases">Open Cases:</p>
                 </div>
-
-                <script src="assets/js/script.js"> </script>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+     
+    <script src="assets/js/script.js"> </script>
 </body>
 
 </html>
