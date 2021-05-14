@@ -28,8 +28,8 @@ function searchResults(){
     //     console.log(data);
     // });
 
-    flightSearch();
-    //COVIDSearch();
+    //flightSearch();
+    COVIDSearch();
     
 
 }
@@ -86,7 +86,14 @@ function COVIDSearch(){
       
     fetch(`https://api.covid19tracking.narrativa.com/api/country/${COVIDorigin}?date_from=${moment().format("YYYY-MM-DD")}`, requestOptions)
         .then(response => response.json())
-        .then(result => console.log(result))
+        .then(function(result){
+            console.log(result.total.today_confirmed);
+            console.log(result.total.yesterday_confirmed);
+            console.log(result.total.today_deaths);
+            console.log(result.total.yesterday_deaths);
+            console.log(result.total.today_open_cases);
+            console.log(result.total.yesterday_open_cases);
+        })
         .catch(error => console.log('error', error));
 
 }
