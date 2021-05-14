@@ -19,9 +19,17 @@ function searchResults(){
     destination = document.getElementById("destination").value;
     departureDate = moment(document.getElementById("departure-date").value).format("YYYY-MM-DD");
 
+    // fetch("https://www.airport-data.com/api/ap_info.json?iata=JFK",
+    // {
+    //     //mode: "no-cors",
+    //     headers: {"Content-Type": "application/json"}
+    // })
+    // .then(function(data){
+    //     console.log(data);
+    // });
 
     flightSearch();
-    COVIDSearch();
+    //COVIDSearch();
     
 
 }
@@ -36,10 +44,22 @@ function flightSearch(){
     .then(processJSON)
     .then(fetchFlight)
     .then(processJSON)
-    .then(console.log)
+    .then(displayResults)
     .catch(err => {
 	    console.error(err);
     });
+}
+
+function displayResults(response){
+    for(var i = 0; i < 2; i ++){
+        console.log(response.data[i]);
+        console.log("Seats:" + response.data[i].numberOfBookableSeats);
+        console.log("Price:" + response.data[i].price.total);
+        console.log("CheckedBags:" + response.data[i].pricingOptions.includedCheckedBagsOnly);
+        console.log("OneWay:" + response.data[i].oneWay);
+        console.log("DepartureTime:" + response.data[i].itineraries[0].segments[0].departure.at);
+    }
+    
 }
 
 function processJSON(response){
