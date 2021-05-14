@@ -1,4 +1,4 @@
-var originOptions = ["RAI",
+var originOptions = [" ", "RAI",
 "CPT",
 "JNB",
 "ALG",
@@ -1759,7 +1759,7 @@ var originOptions = ["RAI",
 "HUI",
 "SGN"
 ]; 
-var destinationOptions = ["RAI",
+var destinationOptions = [" " ,"RAI",
 "CPT",
 "JNB",
 "ALG",
@@ -3521,7 +3521,7 @@ var destinationOptions = ["RAI",
 "SGN"
 ]; 
 
-var countries = ["Cape Verde",
+var countries = [" ", "Cape Verde",
 "South Africa",
 "South Africa",
 "Algeria",
@@ -5304,15 +5304,19 @@ function searchResults(){
     destination = destinationSelect.value;
     departureDate = moment(departureEl.value).format("YYYY-MM-DD");
 
-    flightSearch();
-    COVIDSearch();
+    if(departureEl.value != "" ){
+        if(origin != " " || destination != " "){
+            location.href = "#modal";
+            flightSearch();
+            COVIDSearch();
+        }
+    }
+    else
+        location.href = "#errormodal";
     
     saveSearch(origin, destination, departureDate);
     renderLastSearch();
     
-    location.href = "#modal";
-    
-
 }
 
 function saveSearch(origin, destination, departureDate){
