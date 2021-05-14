@@ -5283,8 +5283,11 @@ var countries = ["Cape Verde",
 "Viet Nam"
 ];
 
+
+
 var originSelect = document.getElementById("origin"); 
 var destinationSelect = document.getElementById("destination"); 
+var departureEl = document.getElementById("departure-date");
 
 applyChoices(originOptions, originSelect);
 applyChoices(destinationOptions, destinationSelect);
@@ -5295,6 +5298,8 @@ searchBtn.addEventListener("click", searchResults);
 var origin;
 var destination;
 var departureDate;
+
+renderLastSearch();
 
 function searchResults(){
     origin = document.getElementById("origin").value;
@@ -5311,8 +5316,33 @@ function searchResults(){
     // });
 
     //flightSearch();
-    COVIDSearch();
+    //COVIDSearch();
     
+    saveSearch(origin, destination, departureDate);
+    renderLastSearch();  
+    
+
+}
+
+function saveSearch(origin, destination, departureDate){
+    var searchHistory = {
+        destination: destination,
+        origin: origin,
+        departureDate: departureDate
+    };
+    localStorage.setItem("history", JSON.stringify(searchHistory));
+}
+
+function renderLastSearch(){
+    var lastSearch = JSON.parse(localStorage.getItem("history"));
+    if (lastGrade !== null) {
+        document.getElementById("origin").value = lastSearch.origin;
+        document.getElementById("destination").value = lastSearch.destination;
+        document.getElementById("departure-date").value = lastSearch.departureDate;
+    }
+    else{
+        return;
+    }
 
 }
 
