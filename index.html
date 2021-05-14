@@ -11,25 +11,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/2.0.5/grids-responsive.min.css">
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.25.1/moment.min.js"></script>
-
-
-
     <link rel="stylesheet" href="./assets/css/style.css">
+
+<!-- Header -->
 </head>
-
-<body>
-    <!-- Header -->
-    <header id="header">
+    <div class="header" id="header">
         <h1 class="brand-title pure-g-center pure-u-1">Travel Knowtes</h1>
-    </header>
-
+</div>
+<body> 
     <!--Search Container-->
     <div id="layout" class="pure-g">
         <div class="search-sidebar pure-u-1 pure-u-md-1-3" id="search-form">
-            <div class="header">
+            <div class="form">
                 <div class="pure-form pure-form-stacked">
                     <fieldset>
-                        <legend>Flight Search</legend>
+                        <h1>Flight Search</h1>
                         <label for="origin">Origin</label>
                         <select name="origin" id="origin" placeholder="origin"></select>
                         <label for="destination">Destination</label>
@@ -43,13 +39,13 @@
                 </div>
             </div>
         </div>
-
+        <!--Flight results container-->
         <div class="content pure-u-1" id="flight-container">
             <h1 class="content-subhead">Search Results</h1>
-            <!-- Flight Search Results -->
+            
             <div class="travel">
                 <!--Cards for search results-->
-                <div class="container" id="card1">
+                <div class="card" id="card1">
                     <h1>Option1</h1>
                     <p class="Seats">Seats:</p>
                     <p class="Price">Price:</p>
@@ -58,25 +54,25 @@
                     <p class="DepartureTime">Departure Time:</p>
                 </div>
 
-                <div class="container" id="card2">
+                <div class="card" id="card2">
                     <h1>Option2</h1>
                     <p class="Seats">Seats:</p>
                     <p class="Price">Price:</p>
                     <p class="Checked Bags">Checked Bags:</p>
                     <p class="OneWay">One-Way:</p>
                     <p class="DepartureTime">Departure Time:</p>
-                </div>
-                <!-- COVID Container -->
-                <div class="content pure-g pure-u-1" id="covid-container">
-                    <h1 class="content-subhead">COVID Data</h1>
-                    <!--Card for COVID-->
-                    <h3>Covid-19 Statistics</h3>
-                    <p class="TotalConfirmed">Total Confirmed Cases:</p>
-                    <p class="TotalDeaths">Total Deaths:</p>
-                    <p class="OpenCases">Open Cases:</p>
-                </div>
+                </div>              
             </div>
         </div>
+        <!-- COVID Container -->
+        <div class="content pure-g pure-u-1" id="covid-container">
+            <h1 class="content-subhead">COVID Data</h1>
+            <!--Card for COVID-->
+            <h3>Covid-19 Statistics</h3>
+            <p class="TotalConfirmed">Total Confirmed Cases:</p>
+            <p class="TotalDeaths">Total Deaths:</p>
+            <p class="OpenCases">Open Cases:</p>
+        </div>    
     </div>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
      
