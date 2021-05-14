@@ -5315,8 +5315,8 @@ function searchResults(){
     //     console.log(data);
     // });
 
-    //flightSearch();
-    //COVIDSearch();
+    // flightSearch();
+    // COVIDSearch();
     
     saveSearch(origin, destination, departureDate);
     renderLastSearch();  
@@ -5430,7 +5430,7 @@ function applyChoices(options, select){
     }
 }
 
-/*fetch("https://test.api.amadeus.com/v1/security/oauth2/token",
+fetch("https://test.api.amadeus.com/v1/security/oauth2/token",
 {
     method: "POST",
     headers: {"Content-Type": "application/x-www-form-urlencoded"},
@@ -5466,6 +5466,6 @@ fetch("https://api.covid19tracking.narrativa.com/api/country/spain?date_from=202
     .then(result => console.log(result))
     .catch(error => console.log('error', error));
 
-*/
+
 
 
